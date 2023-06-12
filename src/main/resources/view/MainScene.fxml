@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="285.0" prefWidth="624.0" style="-fx-background-color: BLANCHEDALMOND;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.app.controller.MainSceneController">
+   <children>
+      <VBox alignment="CENTER" layoutX="10.0" layoutY="14.0" prefHeight="300.0" prefWidth="604.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label maxWidth="1.7976931348623157E308" text="Select a Folder / File">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <HBox spacing="10.0">
+               <children>
+                  <TextField fx:id="txtSource" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="btnSource" mnemonicParsing="false" onAction="#btnSourceOnAction" style="-fx-background-color: DARKSEAGREEN;" text="BROWS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Label maxWidth="1.7976931348623157E308" text="Select a Folder">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <HBox spacing="10.0">
+               <children>
+                  <TextField fx:id="txtTarget" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="btnTarget" mnemonicParsing="false" onAction="#btnTargetOnAction" style="-fx-background-color: DARKSEAGREEN;" text="BROWS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="50.0">
+               <children>
+                  <Button fx:id="btnCopy" disable="true" mnemonicParsing="false" onAction="#btnCopyOnAction" style="-fx-background-color: GOLDENROD;" text="Copy">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnMove" disable="true" mnemonicParsing="false" onAction="#btnMoveOnAction" style="-fx-background-color: LIGHTSEAGREEN;" text="Move">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnDelete" disable="true" mnemonicParsing="false" onAction="#btnDeleteOnAction" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnReset" layoutX="269.0" layoutY="20.0" mnemonicParsing="false" onAction="#btnResetOnAction" style="-fx-background-color: ORCHID;" text="Reset" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+            <Label fx:id="lblMessage" alignment="CENTER" prefHeight="30.0" prefWidth="154.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

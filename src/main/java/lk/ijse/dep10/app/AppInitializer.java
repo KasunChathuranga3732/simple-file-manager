@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import javax.security.auth.login.AccountNotFoundException;
 import java.io.IOException;
 
 public class AppInitializer extends Application {
@@ -17,7 +16,12 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        System.out.println("Working");
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/MainScene.fxml"));
+        AnchorPane root = fxmlLoader.load();
+        primaryStage.setScene(new Scene(root));
+        primaryStage.setTitle("File Handler");
+        primaryStage.show();
+        primaryStage.centerOnScreen();
 
     }
 }
