@@ -5,6 +5,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import javax.swing.*;
+import java.io.File;
+
 public class MainSceneController {
 
     public Button btnCopy;
@@ -16,6 +19,9 @@ public class MainSceneController {
     public Label lblMessage;
     public TextField txtSource;
     public TextField txtTarget;
+
+    private File srcFile;
+    private File trgtFile;
 
 
     public void btnCopyOnAction(ActionEvent event) {
@@ -39,12 +45,28 @@ public class MainSceneController {
 
 
     public void btnSourceOnAction(ActionEvent event) {
+        JFileChooser chooser = new JFileChooser();
+        chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        chooser.setDialogTitle("Select a Folder / File");
+        int i = chooser.showOpenDialog(null);
+        if (i == JFileChooser.APPROVE_OPTION) {
+            srcFile = chooser.getSelectedFile();
+            txtSource.setText(srcFile.getPath());
+        }
 
+        lblMessage.setText("");
+        buttonEnable();
     }
 
 
     public void btnTargetOnAction(ActionEvent event) {
 
+    }
+
+    private void buttonEnable() {
+        btnCopy.setDisable(srcFile == null || trgtFile == null);
+        btnDelete.setDisable(srcFile == null);
+        btnMove.setDisable(srcFile == null || trgtFile == null || srcFile.getPath().equals(trgtFile.getPath()));
     }
 
 }
