@@ -30,7 +30,26 @@ public class MainSceneController {
 
 
     public void btnDeleteOnAction(ActionEvent event) {
+        if (srcFile.isDirectory()) {
+            deleteFile(srcFile);
+        }
+        srcFile.delete();
+        txtSource.clear();
+        txtTarget.clear();
+        srcFile = null;
+        trgtFile = null;
+        lblMessage.setText("Complete..!");
+        System.out.println("Complete");
+    }
 
+    private void deleteFile(File srcFile) {
+        File[] files = srcFile.listFiles();
+        for (File file : files) {
+            if (file.isDirectory()) {
+                deleteFile(file);
+            }
+            file.delete();
+        }
     }
 
 
