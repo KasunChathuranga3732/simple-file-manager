@@ -40,6 +40,12 @@ public class MainSceneController {
 
 
     public void btnResetOnAction(ActionEvent event) {
+        txtSource.clear();
+        txtTarget.clear();
+        lblMessage.setText("");
+        srcFile = null;
+        trgtFile = null;
+        txtSource.requestFocus();
     }
 
 
