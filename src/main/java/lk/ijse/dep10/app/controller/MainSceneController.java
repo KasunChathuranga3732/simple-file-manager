@@ -40,7 +40,6 @@ public class MainSceneController {
 
 
     public void btnResetOnAction(ActionEvent event) {
-
     }
 
 
@@ -60,7 +59,16 @@ public class MainSceneController {
 
 
     public void btnTargetOnAction(ActionEvent event) {
+        JFileChooser chooser = new JFileChooser();
+        chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        chooser.setDialogTitle("Select a Folder");
+        int i = chooser.showOpenDialog(null);
+        if (i == JFileChooser.APPROVE_OPTION) {
+            trgtFile = chooser.getSelectedFile();
+            txtTarget.setText(trgtFile.getPath());
+        }
 
+        buttonEnable();
     }
 
     private void buttonEnable() {
