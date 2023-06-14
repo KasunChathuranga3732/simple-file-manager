@@ -54,6 +54,14 @@ public class MainSceneController {
 
 
     public void btnMoveOnAction(ActionEvent event) {
+        trgtFile = new File(trgtFile, srcFile.getName());
+        srcFile.renameTo(trgtFile);
+        txtSource.clear();
+        txtTarget.clear();
+        srcFile = null;
+        trgtFile = null;
+        lblMessage.setText("Complete..!");
+        System.out.println("Complete");
 
     }
 
