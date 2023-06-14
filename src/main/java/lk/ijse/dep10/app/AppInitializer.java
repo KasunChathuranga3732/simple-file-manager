@@ -19,7 +19,7 @@ public class AppInitializer extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/MainScene.fxml"));
         AnchorPane root = fxmlLoader.load();
         primaryStage.setScene(new Scene(root));
-        primaryStage.setTitle("File Handler");
+        primaryStage.setTitle("File Manager");
         primaryStage.show();
         primaryStage.centerOnScreen();
 

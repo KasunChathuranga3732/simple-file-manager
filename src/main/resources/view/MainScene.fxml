@@ -20,7 +20,7 @@
             </Label>
             <HBox spacing="10.0">
                <children>
-                  <TextField fx:id="txtSource" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                  <TextField fx:id="txtSource" maxWidth="1.7976931348623157E308" promptText="Source" HBox.hgrow="ALWAYS">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -42,7 +42,7 @@
             </Label>
             <HBox spacing="10.0">
                <children>
-                  <TextField fx:id="txtTarget" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                  <TextField fx:id="txtTarget" maxWidth="1.7976931348623157E308" promptText="Target" HBox.hgrow="ALWAYS">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -81,7 +81,10 @@
                   <Insets top="10.0" />
                </padding>
             </HBox>
-            <Label fx:id="lblMessage" alignment="CENTER" prefHeight="30.0" prefWidth="154.0" />
+            <Label fx:id="lblMessage" alignment="CENTER" prefHeight="30.0" prefWidth="168.0">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
          </children>
       </VBox>
    </children>
